@@ -15,39 +15,37 @@ sheet=book.active
     
 # Load images.
     
-image_1 = face_recognition.load_image_file("1.jpg")
+image_1 = face_recognition.load_image_file("dataset/item_1.jpg")
 image_1_face_encoding = face_recognition.face_encodings(image_1)[0]
     
-image_5 = face_recognition.load_image_file("5.jpg")
-image_5_face_encoding = face_recognition.face_encodings(image_5)[0]
+image_2 = face_recognition.load_image_file("dataset/item_2.jpg")
+image_2_face_encoding = face_recognition.face_encodings(image_2)[0]
     
-image_7 = face_recognition.load_image_file("7.jpg")
-image_7_face_encoding = face_recognition.face_encodings(image_7)[0]
-    
-image_3 = face_recognition.load_image_file("3.jpg")
+image_3 = face_recognition.load_image_file("dataset/item_3.jpg")
 image_3_face_encoding = face_recognition.face_encodings(image_3)[0]
     
-image_4 = face_recognition.load_image_file("4.jpg")
+image_4 = face_recognition.load_image_file("dataset/item_4.jpg")
 image_4_face_encoding = face_recognition.face_encodings(image_4)[0]
+    
+image_0 = face_recognition.load_image_file("dataset/item_0.jpg")
+image_0_face_encoding = face_recognition.face_encodings(image_0)[0]
     
     
 # Create arrays of known face encodings and their names
 known_face_encodings = [
         
         image_1_face_encoding,
-        image_5_face_encoding,
-        image_7_face_encoding,
+        image_2_face_encoding,
         image_3_face_encoding,
-        image_4_face_encoding
+        image_0_face_encoding
         
     ]
 known_face_names = [
         
         "1",
-        "5",
-        "7",
+        "2",
         "3",
-        "4"
+        "0"
        
     ]
     
