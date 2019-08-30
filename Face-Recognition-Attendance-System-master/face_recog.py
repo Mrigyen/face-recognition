@@ -18,16 +18,16 @@ video_capture = cv2.VideoCapture(0)
 image_1 = face_recognition.load_image_file("dataset/Shreyansh.jpg")
 image_1_face_encoding = face_recognition.face_encodings(image_1)[0]
     
-image_5 = face_recognition.load_image_file("dataset/5.jpg")
+image_5 = face_recognition.load_image_file("dataset/Soumyadeep.jpg")
 image_5_face_encoding = face_recognition.face_encodings(image_5)[0]
     
-image_7 = face_recognition.load_image_file("dataset/7.jpg")
+image_7 = face_recognition.load_image_file("dataset/Bindu.jpg")
 image_7_face_encoding = face_recognition.face_encodings(image_7)[0]
     
 image_3 = face_recognition.load_image_file("dataset/Harsh.jpg")
 image_3_face_encoding = face_recognition.face_encodings(image_3)[0]
     
-image_4 = face_recognition.load_image_file("dataset/4.jpg")
+image_4 = face_recognition.load_image_file("dataset/Mrigyen.jpg")
 image_4_face_encoding = face_recognition.face_encodings(image_4)[0]
     
     
@@ -43,11 +43,11 @@ known_face_encodings = [
     ]
 known_face_names = [
         
-        "1",
-        "5",
-        "7",
-        "3",
-        "4"
+        "Shreyansh",
+        "Soumyadeep",
+        "Bindu",
+        "Harsh",
+        "Mrigyen"
        
     ]
     
@@ -127,10 +127,21 @@ while True:
     # Integrate with firebase
     
     if(firebase.get('/Harsh','IIT2018049')=='False'):
-      if face_names[0] == '3':
+      if face_names[0] == 'Harsh':
         result = firebase.patch('/Harsh', {'IIT2018049':'True'})
-    
-      
+    if(firebase.get('/Mrigyen','IIT2018033')=='False'):
+      if face_names[0] == 'Mrigyen':
+        result = firebase.patch('/Mrigyen', {'IIT2018033':'True'})
+    if(firebase.get('/Soumyadeep','IIT2018001')=='False'):
+      if face_names[0] == 'Soumyadeep':
+        result = firebase.patch('/Soumyadeep', {'IIT2018001':'True'})
+    if(firebase.get('/Shreyansh','IIT2018073')=='False'):
+      if face_names[0] == 'Shreyansh':
+        result = firebase.patch('/Shreyansh', {'IIT2018073':'True'})
+    if(firebase.get('/Bindu','IIT2018105')=='False'):
+      if face_names[0] == 'Bindu':
+        result = firebase.patch('/Bindu', {'IIT2018105':'True'})
+  
  
     # Hit 'q' on the keyboard to quit!
     if cv2.waitKey(1) & 0xFF == ord('q'):
