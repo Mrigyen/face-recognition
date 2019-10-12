@@ -27,10 +27,6 @@ image_7_face_encoding = face_recognition.face_encodings(image_7)[0]
 image_3 = face_recognition.load_image_file("dataset/Harsh.jpg")
 image_3_face_encoding = face_recognition.face_encodings(image_3)[0]
     
-image_4 = face_recognition.load_image_file("dataset/Mrigyen.jpg")
-image_4_face_encoding = face_recognition.face_encodings(image_4)[0]
-    
-    
 # Create arrays of known face encodings and their names
 known_face_encodings = [
         
@@ -38,7 +34,7 @@ known_face_encodings = [
         image_5_face_encoding,
         image_7_face_encoding,
         image_3_face_encoding,
-        image_4_face_encoding
+
         
     ]
 known_face_names = [
@@ -47,7 +43,7 @@ known_face_names = [
         "Soumyadeep",
         "Bindu",
         "Harsh",
-        "Mrigyen"
+
        
     ]
     
@@ -129,9 +125,6 @@ while True:
     if(firebase.get('/Harsh','IIT2018049')=='False'):
       if face_names[0] == 'Harsh':
         result = firebase.patch('/Harsh', {'IIT2018049':'True'})
-    if(firebase.get('/Mrigyen','IIT2018033')=='False'):
-      if face_names[0] == 'Mrigyen':
-        result = firebase.patch('/Mrigyen', {'IIT2018033':'True'})
     if(firebase.get('/Soumyadeep','IIT2018001')=='False'):
       if face_names[0] == 'Soumyadeep':
         result = firebase.patch('/Soumyadeep', {'IIT2018001':'True'})
